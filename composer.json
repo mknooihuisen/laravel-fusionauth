@@ -1,0 +1,54 @@
+{
+    "name": "mknooihuisen/laravel-fusionauth",
+    "description": "Laravel Authentication Boilerplate for use with FusionAuth",
+    "keywords": [
+        "mknooihuisen",
+        "laravel-fusionauth"
+    ],
+    "homepage": "https://github.com/mknooihuisen/laravel-fusionauth",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mike Knooihuisen",
+            "email": "mknooihuisen@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mknooihuisen\\LaravelFusionauth\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mknooihuisen\\LaravelFusionauth\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mknooihuisen\\LaravelFusionauth\\LaravelFusionauthServiceProvider"
+            ],
+            "aliases": {
+                "LaravelFusionauth": "Mknooihuisen\\LaravelFusionauth\\LaravelFusionauthFacade"
+            }
+        }
+    }
+}
