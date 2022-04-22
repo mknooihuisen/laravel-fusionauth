@@ -2,7 +2,7 @@
 
 namespace Mknooihuisen\LaravelFusionauth;
 
-class LaravelFusionauth
+class Fusionauth
 {
     // Build your next great package.
 }

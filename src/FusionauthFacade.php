@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Mknooihuisen\LaravelFusionauth\Skeleton\SkeletonClass
  */
-class LaravelFusionauthFacade extends Facade
+class FusionauthFacade extends Facade
 {
     /**
      * Get the registered name of the component.

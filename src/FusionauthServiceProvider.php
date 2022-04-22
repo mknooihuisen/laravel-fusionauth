@@ -4,7 +4,7 @@ namespace Mknooihuisen\LaravelFusionauth;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelFusionauthServiceProvider extends ServiceProvider
+class FusionauthServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -21,7 +21,7 @@ class LaravelFusionauthServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-fusionauth.php'),
+                __DIR__ . '/../config/fusionauth.php' => config_path('laravel-fusionauth.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,11 +50,11 @@ class LaravelFusionauthServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-fusionauth');
+        $this->mergeConfigFrom(__DIR__ . '/../config/fusionauth.php', 'laravel-fusionauth');
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-fusionauth', function () {
-            return new LaravelFusionauth;
+            return new Fusionauth;
         });
     }
 }
