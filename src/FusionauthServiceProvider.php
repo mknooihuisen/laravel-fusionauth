@@ -2,7 +2,9 @@
 
 namespace Mknooihuisen\LaravelFusionauth;
 
+use FusionAuth\FusionAuthClient;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\ErrorHandler\Error\FatalError;
 
 class FusionauthServiceProvider extends ServiceProvider
 {
@@ -21,7 +23,7 @@ class FusionauthServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/fusionauth.php' => config_path('laravel-fusionauth.php'),
+                __DIR__ . '/../config/fusionauth.php' => config_path('fusionauth.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,7 +52,8 @@ class FusionauthServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/fusionauth.php', 'laravel-fusionauth');
+        $this->mergeConfigFrom(__DIR__ . '/../config/fusionauth.php', 'fusionauth');
+
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-fusionauth', function () {
